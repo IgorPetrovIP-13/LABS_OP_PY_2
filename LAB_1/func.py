@@ -12,6 +12,7 @@ def read_file(path):
     fin=open(path,'rt')
     for string in fin:
         print(string,end='')
+    print('\n')
     fin.close()
 
 
@@ -25,7 +26,7 @@ def format_file(first_path, second_path, number):
         for word in string:
             list.append(word)
     for i in list:
-        if list.count(i) >= number:
+        if list.count(i) < number:
             perfect.append(i)
     perfect = sorted(perfect, key=len, reverse=True)
     new_line = ' '.join(perfect)
